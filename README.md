@@ -1,0 +1,2 @@
+# checkbox选中动画
+使用CSS控制checkbox选中时的动画效果，小圆点增加滑动效果
