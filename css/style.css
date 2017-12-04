@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    list-style: none;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.radio--group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+}
+.radio--group input {
+    margin: 0 5px 0 0;
+    padding: 0;
+}
+
+.radio[type="radio"]:checked, .radio[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.radio[type="radio"]:checked + label, .radio[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 21px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+.radio[type="radio"]:checked + label:before, .radio[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #0076c1;
+    border-radius: 100%;
+    background: #fff;
+    box-sizing: border-box;
+}
+.radio[type="radio"]:not(:checked) + label:before {
+    border-color: #cbcbcb;
+}
+.radio[type="radio"]:not(:checked) + label:hover:before {
+    border-color: #a7a7a7;
+}
+.radio[type="radio"]:checked + label:after, .radio[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(ellipse at center, #0076c1 0%, #0076c1 38%, rgba(255, 255, 255, 0) 44%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-radius: 0;
+    transition: all .2s ease;
+    z-index: 1;
+    box-sizing: border-box;
+    transform-origin: 50% 1%;
+}
+.radio[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    transform: scale(0) translateY(-50%);
+}
+.radio[type="radio"]:checked + label:after {
+    opacity: 1;
+    transform: scale(1) translateY(-50%);
+}
+.radio[type="radio"]:disabled:checked + label:before {
+    border-color: #cbcbcb;
+}
+.radio[type="radio"]:disabled:checked + label:after {
+    background: radial-gradient(ellipse at center, #cbcbcb 0%, #cbcbcb 43%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+}
+.radio[type="radio"]:disabled + label {
+    cursor: not-allowed;
+    color: #cbcbcb;
+}
+.radio[type="radio"]:disabled + label:hover:before {
+    border-color: #cbcbcb;
+}
+.radio[type="radio"]:disabled:not(:checked) + label:before {
+    background: #f3f3f3;
+}
